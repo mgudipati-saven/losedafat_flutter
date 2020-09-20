@@ -2,7 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../widgets/circle_icon.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,10 +23,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xFFF4F7FB),
         elevation: 0,
-        leading: Image.asset(
-          'images/menu.png',
-          width: 44,
-          height: 24,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Image.asset(
+            'images/menu.png',
+            width: 44,
+            height: 24,
+          ),
         ),
         title: const Text(
           'Home',
@@ -24,14 +40,17 @@ class HomePage extends StatelessWidget {
           ),
         ),
         actions: [
-          IconButton(
-            icon: CircleIcon(
-              icon: Icons.add,
-              fillColor: Color(0xFF97D749),
-              iconColor: Colors.white,
-              size: 34,
+          Padding(
+            padding: const EdgeInsets.only(right: 18.0),
+            child: IconButton(
+              icon: CircleIcon(
+                icon: Icons.add,
+                fillColor: Color(0xFF97D749),
+                iconColor: Colors.white,
+                size: 28,
+              ),
+              onPressed: () => {},
             ),
-            onPressed: () => {},
           ),
         ],
       ),
@@ -112,6 +131,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
+                      SizedBox(width: 30),
                       RichText(
                         text: TextSpan(
                           style: TextStyle(
@@ -164,11 +184,48 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(height: 30),
                 ],
               ),
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            activeIcon: Image.asset('images/home.png'),
+            title: Text('Home'),
+            backgroundColor: Color(0xFFF4F6FF),
+            icon: Image.asset('images/home_i.png'),
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Image.asset('images/weight.png'),
+            title: Text('Weight'),
+            backgroundColor: Color(0xFFF4F6FF),
+            icon: Image.asset('images/weight_i.png'),
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Image.asset('images/chat.png'),
+            title: Text('Chat'),
+            backgroundColor: Color(0xFFF4F6FF),
+            icon: Image.asset('images/chat_i.png'),
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Image.asset('images/contests.png'),
+            title: Text('Contests'),
+            backgroundColor: Color(0xFFF4F6FF),
+            icon: Image.asset('images/contests_i.png'),
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Image.asset('images/food.png'),
+            title: Text('Food'),
+            backgroundColor: Color(0xFFF4F6FF),
+            icon: Image.asset('images/food_i.png'),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }

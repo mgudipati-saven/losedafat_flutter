@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/ruler.dart';
 import '../widgets/circle_icon.dart';
 
 class HomePage extends StatefulWidget {
@@ -184,7 +185,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  Container(
+                    width: 400,
+                    height: 25,
+                    child: Ruler(
+                      tickColor: Color(0xFF576BC1),
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ),
                 ],
               ),
             ),

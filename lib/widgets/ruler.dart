@@ -42,7 +42,7 @@ class _RulerPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    print('Entered paint method: size: $size');
+    //print('Entered paint method: size: $size');
     // mm tick
     Paint mmTick = Paint()
       ..color = tickColor
@@ -72,8 +72,7 @@ class _RulerPainter extends CustomPainter {
       //double y = ticker * physicaLogicalRatio * dpr;
       double x = ticker * physicaLogicalRatio * dpr;
       double y = size.height;
-      print(
-          'width: ${size.width}, dpr: $dpr, maxSize: $maxSize, ticker: $ticker, x: $x');
+      //print('width: ${size.width}, dpr: $dpr, maxSize: $maxSize, ticker: $ticker, x: $x');
       //if (ticker % 10 == 0) {
       //canvas.drawLine(Offset(x, y), Offset(x, y - 15), cmTick);
       // var paragraphBuilder = ui.ParagraphBuilder(ui.ParagraphStyle())

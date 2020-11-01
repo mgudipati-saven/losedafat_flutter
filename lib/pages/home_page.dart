@@ -78,31 +78,31 @@ class _HomePageState extends State<HomePage> {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           activeIcon: Image.asset('images/home.png'),
-          title: Text('Home'),
+          label: 'Home',
           backgroundColor: Color(0xFFF4F6FF),
           icon: Image.asset('images/home_i.png'),
         ),
         BottomNavigationBarItem(
           activeIcon: Image.asset('images/weight.png'),
-          title: Text('Weight'),
+          label: 'Weight',
           backgroundColor: Color(0xFFF4F6FF),
           icon: Image.asset('images/weight_i.png'),
         ),
         BottomNavigationBarItem(
           activeIcon: Image.asset('images/chat.png'),
-          title: Text('Chat'),
+          label: 'Chat',
           backgroundColor: Color(0xFFF4F6FF),
           icon: Image.asset('images/chat_i.png'),
         ),
         BottomNavigationBarItem(
           activeIcon: Image.asset('images/contests.png'),
-          title: Text('Contests'),
+          label: 'Contests',
           backgroundColor: Color(0xFFF4F6FF),
           icon: Image.asset('images/contests_i.png'),
         ),
         BottomNavigationBarItem(
           activeIcon: Image.asset('images/food.png'),
-          title: Text('Food'),
+          label: 'Food',
           backgroundColor: Color(0xFFF4F6FF),
           icon: Image.asset('images/food_i.png'),
         ),

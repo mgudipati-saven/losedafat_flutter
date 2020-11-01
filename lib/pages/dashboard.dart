@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../widgets/ruler.dart';
+import '../widgets/gauge.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -142,6 +145,26 @@ class Dashboard extends StatelessWidget {
                     tickColor: Color(0xFF576BC1),
                     style: TextStyle(color: Colors.blue),
                   ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          color: Color(0xFF576BC1),
+          elevation: 0.1,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(12, 32, 12, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 400,
+                  height: 200,
+                  child: Gauge(),
                 ),
               ],
             ),
